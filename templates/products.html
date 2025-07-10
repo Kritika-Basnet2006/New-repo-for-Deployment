@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+{% block title1%}Products{% endblock %}
+{% block content%}
+
+    <div class="products">
+        {%for text in products%}
+        <div class="item">
+            <img src="{{url_for('static',filename='images/'+text.image)}}" alt="Image not found">
+            <div class="pdescription">
+                <h4>Name:{{text.name}}</h4>
+                <label for="">Price: Rs.{{text.price}}</label>
+                <p>Description:{{text.description}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+
+{% endblock %}   
